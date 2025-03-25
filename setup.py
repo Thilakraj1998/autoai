@@ -14,6 +14,9 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     license = "Apache License 2.0",
     packages=setuptools.find_packages(), 
+    package_data={
+        "blobcity": ["data_store/**/*"],  # Include all files inside data_store
+    },
     classifiers =[
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
@@ -24,6 +27,7 @@ setuptools.setup(
     python_requires='>=3.6',                # Minimum version requirement of the package
     py_modules=["blobcity"],             # Name of the python package
     # package_dir={'':'autoai/blobcity'},     # Directory of the source code of the package
+    include_package_data=True,
     install_requires=[
         "dill==0.3.4",
         "cliff==3.6.0",
